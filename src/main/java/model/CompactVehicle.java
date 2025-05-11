@@ -12,10 +12,8 @@ public class CompactVehicle extends  Vehicle{
 
     @Override
     public double calculateAmount(LocalDateTime entryTime, LocalDateTime exitTime) {
-        Duration duration= Duration.between(entryTime,exitTime);
 
-        double hours= Math.ceil(duration.toMinutes()/60);
-        return hours*10;
+        return getHours(entryTime,exitTime)*10;
 
     }
 }

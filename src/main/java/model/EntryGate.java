@@ -61,7 +61,10 @@ public class EntryGate extends Gate {
 
                     int selectedParkingSpot = sc.nextInt();
                     if (selectedParkingSpot >= 0 && selectedParkingSpot < availableParkingSpots.size()) {
-                        Ticket ticket = availableParkingSpots.get(selectedParkingSpot).park();
+                        ParkingSpot parkingSpot=availableParkingSpots.get(selectedParkingSpot);
+                        parkingSpot.setVehicle(vehicle);
+                        Ticket ticket = parkingSpot.park();
+                        parkingLotApplication.addTicket(ticket);
                         System.out.println(ticket);
                         break;
                     } else {

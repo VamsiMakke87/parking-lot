@@ -75,10 +75,12 @@ public class ParkingSpot {
 
     @Override
     public String toString() {
-        return "{" +
+        return "ParkingSpot{" +
                 "parkingSpotId=" + parkingSpotId +
                 ", floorNumber=" + floorNumber +
                 ", spotType=" + spotType +
+                ", isAvailable=" + isAvailable +
+                ", vehicle=" + vehicle +
                 '}';
     }
 }

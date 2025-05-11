@@ -11,9 +11,6 @@ public class RegularVehicle extends Vehicle{
 
     @Override
     public double calculateAmount(LocalDateTime entryTime, LocalDateTime exitTime) {
-        Duration duration= Duration.between(entryTime,exitTime);
-
-        double hours= Math.ceil(duration.toMinutes()/60);
-        return hours*15;
+        return getHours(entryTime,entryTime)*15;
     }
 }

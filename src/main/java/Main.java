@@ -19,16 +19,23 @@ public class Main {
             while(true){
                 try{
                     Gate gate=null;
-                    System.out.println("Enter 1 for entry and 2 for exit");
-                    int entryOrExit= Integer.parseInt(sc.next().trim());
-                    switch (entryOrExit){
-                        case 1: gate= new EntryGate();break;
-                        case 2: gate= new ExitGate();break;
-                        default:
-                            System.out.println("Invalid Input!!");
+                    outer:while(true) {
+
+                        System.out.println("Enter 1 for entry and 2 for exit");
+                        int entryOrExit = Integer.parseInt(sc.next().trim());
+                        switch (entryOrExit) {
+                            case 1:
+                                gate = new EntryGate();
+                                break outer;
+                            case 2:
+                                gate = new ExitGate();
+                                break outer;
+                            default:
+                                System.out.println("Invalid Input!!");
+                        }
                     }
                     gate.run();
-                    System.out.println("Enter exit to close the application or anything else to book a new parking spot:");
+                    System.out.println("Enter exit to close the application or anything else to continue:");
                     String exitCommand=sc.next();
                     if(exitCommand.equals("exit"))break;
                 }catch(Exception e){

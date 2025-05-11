@@ -64,8 +64,8 @@ public class Ticket {
     }
 
     public double unpark(){
-        price=parkingSpot.unPark(this);
-        isExpired=false;
+        this.price=parkingSpot.unPark(this);
+        this.isExpired=true;
         return price;
     }
 

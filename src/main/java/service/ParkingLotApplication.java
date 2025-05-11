@@ -81,7 +81,12 @@ public class ParkingLotApplication {
     }
 
     public Ticket getTicket(String ticketId){
+        System.out.println(tickets);
         return tickets.getOrDefault(ticketId,null);
+    }
+
+    public void addTicket(Ticket ticket){
+        tickets.put(ticket.getTicketId(),ticket);
     }
 
 }

@@ -1,5 +1,6 @@
 package model;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public abstract class Vehicle {
@@ -42,6 +43,14 @@ public abstract class Vehicle {
     }
 
     public  abstract double calculateAmount(LocalDateTime entryTime, LocalDateTime exitTime);
+
+    public double getHours(LocalDateTime entryTime, LocalDateTime exitTime){
+        Duration duration= Duration.between(entryTime,exitTime);
+
+        double hours= Math.ceil(duration.toMinutes()/60.0);
+
+        return hours;
+    }
 
     @Override
     public String toString() {

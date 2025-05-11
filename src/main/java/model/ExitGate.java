@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDateTime;
+
 public class ExitGate extends Gate {
     @Override
     public void run() {
@@ -13,7 +15,10 @@ public class ExitGate extends Gate {
 
                 if (ticket==null){
                     System.out.println("Ticket Id not found! Please enter again");
+                }else if(ticket.isExpired()){
+                    System.out.println("Ticket expired or already used");
                 }else{
+                    ticket.setExitTime(LocalDateTime.now());
                     break;
                 }
             }

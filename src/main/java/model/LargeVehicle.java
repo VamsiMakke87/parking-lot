@@ -10,9 +10,7 @@ public class LargeVehicle extends Vehicle{
 
     @Override
     public double calculateAmount(LocalDateTime entryTime, LocalDateTime exitTime) {
-        Duration duration= Duration.between(entryTime,exitTime);
 
-        double hours= Math.ceil(duration.toMinutes()/60);
-        return hours*20;
+        return getHours(entryTime,exitTime)*20;
     }
 }
