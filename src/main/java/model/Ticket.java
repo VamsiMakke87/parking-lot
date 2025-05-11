@@ -8,9 +8,13 @@ public class Ticket {
 
     private LocalDateTime entryTime;
 
+    private LocalDateTime exitTime;
+
     private ParkingSpot parkingSpot;
 
     private boolean isExpired;
+
+    private double price;
 
     public boolean isExpired() {
         return isExpired;
@@ -43,6 +47,14 @@ public class Ticket {
         this.entryTime = entryTime;
     }
 
+    public LocalDateTime getExitTime() {
+        return exitTime;
+    }
+
+    public void setExitTime(LocalDateTime exitTime) {
+        this.exitTime = exitTime;
+    }
+
     public ParkingSpot getParkingSpot() {
         return parkingSpot;
     }
@@ -51,12 +63,29 @@ public class Ticket {
         this.parkingSpot = parkingSpot;
     }
 
+    public double unpark(){
+        price=parkingSpot.unPark(this);
+        isExpired=false;
+        return price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Ticket{" +
                 "ticketId='" + ticketId + '\'' +
                 ", entryTime=" + entryTime +
+                ", exitTime=" + exitTime +
                 ", parkingSpot=" + parkingSpot +
+                ", isExpired=" + isExpired +
+                ", price=" + price +
                 '}';
     }
 }

@@ -70,7 +70,7 @@ public class ParkingSpot {
 
     public double unPark(Ticket t){
         this.isAvailable=true;
-        return vehicle.calculateAmount(t.getEntryTime(),LocalDateTime.now());
+        return vehicle.calculateAmount(t.getEntryTime(),t.getExitTime());
     }
 
     @Override
