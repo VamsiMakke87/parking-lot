@@ -11,6 +11,6 @@ public class RegularVehicle extends Vehicle{
 
     @Override
     public double calculateAmount(LocalDateTime entryTime, LocalDateTime exitTime) {
-        return getHours(entryTime,entryTime)*15;
+        return getHours(entryTime,exitTime)*15;
     }
 }
